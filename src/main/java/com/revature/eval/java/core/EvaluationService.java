@@ -562,8 +562,22 @@ public class EvaluationService {
 	 * a number is an Armstrong number.
 	 */
 	public boolean isArmstrongNumber(int input) {
-		return false;
-	}
+
+
+		int[] arr = new int[3];
+			Random rand = new Random();
+
+			int min=1;
+			int max = 100;
+
+			//int int_random = rand.nextInt(upperbound);
+			for(int i =0;i<3;i++) {
+
+				arr[i] = rand.nextInt((max - min) + 1) + min;
+			}
+
+			return arr;
+			}
 
 	/**
 	 * 17. Prime Factors
