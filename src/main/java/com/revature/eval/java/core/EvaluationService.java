@@ -651,7 +651,21 @@ public class EvaluationService {
 	 */
 
 	public int[] threeLuckyNumbers() {
-		return null;
+
+		int[] arr = new int[3];
+		Random rand = new Random();
+
+		int min=1;
+		int max = 100;
+
+		//int int_random = rand.nextInt(upperbound);
+		for(int i =0;i<3;i++) {
+
+			arr[i] = rand.nextInt((max - min) + 1) + min;
+		}
+
+		return arr;
+
 	}
 
 	/*
@@ -665,6 +679,13 @@ public class EvaluationService {
 	 */
 
 	public int guessingGame(int x, int y) {
-		return 0;
+		int randomNum;
+
+		//formula for finding a random number between a range
+		//math.random class
+		randomNum = (int)Math.floor(Math.random()*(y-x+1)+x);
+
+		return randomNum;
+
 	}
 }
