@@ -330,43 +330,43 @@ public class EvaluationService {
 	public int sumFirstAndLastDigit(int num) {
 		String number = Integer.toString(num);
 
-int size=0;
-int newnum =num;
+		int size=0;
+		int newnum =num;
 
-while(num>0) {
+		while(num>0) {
 
-	num = num/10;
+			num = num/10;
 
-	size++;
-}
+			size++;
+		}
 
-int[] arr = new int [size];
+		int[] arr = new int [size];
 
-int i = arr.length-1;
+		int i = arr.length-1;
 
-while(newnum>0) {
+		while(newnum>0) {
 
-	int end = newnum%10;
-	arr[i]= end;
-	newnum = newnum/10;
-	i--;
-}
-int sum = 0;
+			int end = newnum%10;
+			arr[i]= end;
+			newnum = newnum/10;
+			i--;
+		}
+		int sum = 0;
 
-for(int j=0; j<arr.length;j++) {
+		for(int j=0; j<arr.length;j++) {
 
 
-	if(j==0) {
-		sum += arr[j];
-	}
+			if(j==0) {
+				sum += arr[j];
+			}
 
-	if (j == arr.length-1) {
+			if (j == arr.length-1) {
 
-		sum+=arr[j];
-	}
+				sum+=arr[j];
+			}
 
-}
-return sum;
+		}
+		return sum;
 	}
 
 	/**
@@ -378,12 +378,12 @@ return sum;
 	public String reverse(String string) {
 		String out = "";
 
-	for(int i = string.length()-1; i>=0;i--) {
+		for(int i = string.length()-1; i>=0;i--) {
 
-		out= out +string.charAt(i);
-	}
+			out= out +string.charAt(i);
+		}
 
-	return out;
+		return out;
 	}
 
 	/**
