@@ -158,7 +158,15 @@ public class EvaluationService {
 	 * Otherwise, return false;
 	 */
 	public boolean areEqualByThreeDecimalPlaces(double firstNum, double secondNum) {
-		// TODO Write an implementation for this method declaration
+		double comp1 = Math.floor(firstNum*1000);
+		double comp2= Math.floor(secondNum*1000);
+
+		if(comp1==comp2) {
+
+			return true;
+		}
+
+
 		return false;
 	}
 
@@ -204,8 +212,20 @@ public class EvaluationService {
 	 * ZZ represents the calculated days.
 	 */
 	public String printYearsAndDays(long minutes) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		if(minutes<0) {
+
+			return "Invalid Value";
+		}
+		//conversions
+		long hours = minutes/60;
+
+		long day = hours/24;
+
+		long years = day/365;
+
+		long days = day%365;
+
+		return (minutes + " min = " + years+" y " + days+ " d");
 	}
 
 	/**
@@ -218,7 +238,37 @@ public class EvaluationService {
 	 * statement or switch statement whatever is easier for you.
 	 */
 	public String printNumberInWord(int number) {
-		// TODO Write an implementation for this method declaration
+		if(number>9 || number <0) {
+
+			return "OTHER";
+		}
+
+		String word;
+		switch (number) {
+		case 0:
+			return "ZERO";
+		case 1:
+			return "ONE";
+		case 2:
+			return "TWO";
+		case 3:
+			return "THREE";
+		case 4:
+			return "FOUR";
+		case 5:
+			return "FIVE";
+		case 6:
+			return "SIX";
+		case 7:
+			return "SEVEN";
+		case 8:
+			return "EIGHT";
+		case 9:
+			return "NINE";
+
+
+		}
+
 		return null;
 	}
 
@@ -260,8 +310,45 @@ public class EvaluationService {
 	 * invalid value.
 	 */
 	public int sumFirstAndLastDigit(int num) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+		String number = Integer.toString(num);
+
+int size=0;
+int newnum =num;
+
+while(num>0) {
+
+	num = num/10;
+
+	size++;
+}
+
+int[] arr = new int [size];
+
+int i = arr.length-1;
+
+while(newnum>0) {
+
+	int end = newnum%10;
+	arr[i]= end;
+	newnum = newnum/10;
+	i--;
+}
+int sum = 0;
+
+for(int j=0; j<arr.length;j++) {
+
+
+	if(j==0) {
+		sum += arr[j];
+	}
+
+	if (j == arr.length-1) {
+
+		sum+=arr[j];
+	}
+
+}
+return sum;
 	}
 
 	/**
@@ -271,8 +358,14 @@ public class EvaluationService {
 	 * reverses a String. Example: reverse("example"); -> "elpmaxe"
 	 */
 	public String reverse(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		String out = "";
+
+	for(int i = string.length()-1; i>=0;i--) {
+
+		out= out +string.charAt(i);
+	}
+
+	return out;
 	}
 
 	/**
@@ -284,7 +377,19 @@ public class EvaluationService {
 	 */
 	public String acronym(String phrase) {
 		// TODO Write an implementation for this method declaration
-		return null;
+		StringBuilder acronym = new StringBuilder();
+		String[] conversion = phrase.split(" ");
+
+		for(String word : conversion) {
+
+			acronym.append(word.substring(0, 1) );
+
+		}
+
+
+		String result = acronym.toString();
+
+		return result;
 	}
 
 	/**
